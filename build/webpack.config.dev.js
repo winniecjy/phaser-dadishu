@@ -17,7 +17,7 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js$/,
-      exclude: /node_modules/,
+      exclude: /node_modules|lib/,
       loader: 'babel-loader'
     },{
       test: /\.s?css$/,
@@ -42,18 +42,18 @@ module.exports = {
     }),
     new webpack.BannerPlugin(`v-${version}, by Cai Jieying`),
     new webpack.ProvidePlugin({
-      $: './src/lib/zepto.js'
+      $: path.resolve(__dirname, '../src/lib/zepto.js') 
     }),
     new CopyWenpackPlugin([{
-      from: './src/lib/phaser.min.js',
+      from: '../src/lib/phaser.min.js',
       to: 'js'
     }]),
     new HtmlWebpackPlugin({
-      template: '../src/index.html'
+      template: path.resolve(__dirname, '../src/index.html')
     })
   ],
   devServer: {
-    contentBase: path.join(__dirname, './src'),
+    contentBase: path.join(__dirname, '../src'),
     compress: true, // 服务器资源采取gzip
     host: '0.0.0.0',
     port: 8081,

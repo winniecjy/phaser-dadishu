@@ -1,0 +1,27 @@
+/*-start:游戏自定义样式-*/
+
+.cjy_panel {
+    width: 100%;
+    height: 100%;
+    background-color: #f9c04c;
+    position: relative;
+    .start_btn, .music_btn {
+        background: lighten(#f9c04c, 20%);
+        padding: 10px 20px;
+        font-size: 50px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        a {
+            text-decoration: none;
+            color: darken(#f9c04c, 40%);
+        }
+    }
+    .start_btn {
+        bottom: 50%;
+    }
+    .music_btn {
+        bottom: 30%;
+    }
+}
+/*-end:游戏自定义样式-*/
