@@ -8,7 +8,7 @@ module.exports = merge(base, {
   mode: 'development',
   plugins: [
     new CopyWenpackPlugin([{
-      from: '../src/lib/phaser.min.js',
+      from: 'src/lib/phaser.min.js',
       to: 'js'
     }]),
     new HtmlWebpackPlugin({
