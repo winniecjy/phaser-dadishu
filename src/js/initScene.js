@@ -1,11 +1,10 @@
-const initFn = {
+const initScene = {
     preload: function () {
         console.log("start loading ...");
         this.numbersJson = require('../json/numbers.json');
-        console.log(window.customGame)
+        console.log('ccc', window.customGame)
 
-        window.customGame.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-        window.customGame.stage.backgroundColor = '#f9c04c';
+        window.customGame.scale.scaleMode = Phaser.Scale.RESIZE;
 
         window.customGame.load.image('bg', './img/holes-bg.png');
         window.customGame.load.image('hamster', './img/hamster.png');
@@ -24,4 +23,4 @@ const initFn = {
     }
 }
 
-module.exports = initFn;
+module.exports = initScene;

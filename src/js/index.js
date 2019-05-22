@@ -2,19 +2,26 @@ require('../css/reset.scss');
 require('../css/common.scss');
 require('../css/index.scss');
 
-var initFn = require('./initFn'),
+
+var Phaser = require('phaser'),
+  initScene = require('./initScene'),
   play = require('./play');
 
-function startGame() {
-  $(".cjy_panel .start_btn").click(function () {
-    console.log("开始游戏！");
-    // 移除开始界面
-    $(".cjy_panel").hide();
-    customGame.state.start('play');
-  })
-}
 
-window.customGame = new Phaser.Game(750, 750 / window.innerWidth * window.innerHeight, Phaser.CANVAS, 'container', initFn);
-customGame.state.add('play', play);
-customGame.state.start('init');
-startGame();
+let gameConf = {
+  width: 750,
+  height: 750 / window.innerWidth * window.innerHeight,
+  type: Phaser.CANVAS,
+  parent: 'container',
+  backgroundColor: '#f9c04c',
+  scene: initScene
+};
+
+window.customGame = new Phaser.Game(gameConf);
+window.customGame.scene.add('play', play);
+$(".cjy_panel .start_btn").click(function () {
+  console.log("开始游戏！");
+  // 移除开始界面
+  $(".cjy_panel").hide();
+  customGame.scene.start('play');
+})
