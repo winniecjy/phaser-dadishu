@@ -1,4 +1,4 @@
-const gameLast = 60; // 游戏时长，单位为秒
+const gameLast = 10; // 游戏时长，单位为秒
 const hamsterSpeed = 1500; // 地鼠出现时长，单位为秒，初始数值
 var score = 0; // 得分计算
 var isHit = false; // 避免重复点击重复得分
@@ -187,20 +187,7 @@ const play = {
         if (customGame.countdown < 0) {
             customGame.time.events.stop(false);
             
-            // 弹出返回框
-            game.popup.coupon({
-                pack: [{
-                    name: '0',
-                    cls: '0',
-                    val: 999,
-                    cond: 9999
-                }, {
-                    name: '1',
-                    cls: '1',
-                    val: 99,
-                    cond: 999
-                }]
-            });
+            document.getElementsByClassName('cjy_popup')[0].classList = 'cjy_popup show';
         }
     },
 
