@@ -30,11 +30,11 @@ module.exports = merge(base, {
       filename: 'css/[name].css'
     }),
     new CopyWebpackPlugin([{
-      from: '../src/js/phaser.min.js',
-      to: 'js',
+      from: 'src/lib/phaser.min.js',
+      to: '../dist/js',
     }, {
-      from: '../src/img',
-      to: 'img',
+      from: 'src/img',
+      to: '../dist/img',
       ignore: ['.gitkeep']
     }]),
     new HtmlWebpackPlugin({
