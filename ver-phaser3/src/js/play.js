@@ -76,10 +76,10 @@ let changeNum = function (num_in, num_w, num_digit, pos_x, pos_y, key, context) 
     var cnt = 0;
     while (num_digit > 0) { // 从左到右显示数字
         if (num_digit > rec_digit) {
-            context.add.sprite(pos_x, pos_y, key, '00');
+            context.add.sprite(pos_x, pos_y, key, '00').setOrigin(0, 0);
         } else {
             var rec_num = parseInt(num_in / Math.pow(10, num_digit - 1));
-            context.spriteArr[cnt++] = context.add.sprite(pos_x, pos_y, key, '0' + rec_num);
+            context.spriteArr[cnt++] = context.add.sprite(pos_x, pos_y, key, '0' + rec_num).setOrigin(0, 0);
             num_in = num_in % Math.pow(10, num_digit - 1);
         }
         pos_x += num_w;
