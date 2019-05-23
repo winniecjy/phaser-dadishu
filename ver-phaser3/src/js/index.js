@@ -22,9 +22,11 @@ let gameConf = {
 
 window.customGame = new Phaser.Game(gameConf);
 window.customGame.scene.add('play', play);
-$(".cjy_panel .start_btn").click(function () {
-  console.log("开始游戏！");
-  // 移除开始界面
-  $(".cjy_panel").hide();
-  customGame.scene.start('play');
-})
+
+
+// $(".cjy_panel .start_btn").click(function () {
+//   console.log("开始游戏！");
+//   // 移除开始界面
+//   $(".cjy_panel").hide();
+//   customGame.scene.start('play');
+// })
