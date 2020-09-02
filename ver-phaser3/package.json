@@ -39,7 +39,7 @@
   "dependencies": {
     "node-gyp": "^4.0.0",
     "phaser": "^3.17.0",
-    "static-eval": "^2.0.0",
+    "static-eval": "^2.0.2",
     "tar": "^4.4.8"
   }
 }
